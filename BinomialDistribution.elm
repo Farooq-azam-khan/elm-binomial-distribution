@@ -37,14 +37,8 @@ binomial_var = binomial_variance
 main : Html msg 
 main = 
     div []
-        [ choose 0 0 |> render_int_new_line
-        , choose 1 0 |> render_int_new_line
-        , choose 2 0 |> render_int_new_line
-        , choose 2 1 |> render_int_new_line
-        , choose 2 2 |> render_int_new_line
-        , choose 10 5 |> render_int_new_line -- 252
-        -- https://www.khanacademy.org/math/ap-statistics/random-variables-ap/binomial-random-variable/e/calculating-binomial-probability
-        , h1 [] [text "Binomial Distribution Example"]
+        [ -- https://www.khanacademy.org/math/ap-statistics/random-variables-ap/binomial-random-variable/e/calculating-binomial-probability
+         h1 [] [text "Binomial Distribution Example"]
         , h2 [] [text "PDF"]
         , p [] [text "70%, percent of a certain species of tomato live after transplanting from pot to garden. Najib transplants 3 of these tomato plants. Assume that the plants live independently of each other. Let X = the number of tomato plants that live."]
         , p [] [text <| "P(X=2) = " ++ String.fromFloat (binomial_pmf 3 2 0.7)]
